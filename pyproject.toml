@@ -9,10 +9,12 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.50",
+    "statsmodels>=0.15.0",
 ]
 
 [dependency-groups]
 dev = [
     "ipykernel>=7.2.0",
+    "nbconvert>=7.17.1",
     "nbformat>=5.10.4",
 ]
