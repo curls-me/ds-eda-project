@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finding Nicole's Home</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --slide-bg: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --accent: #ea7c1f;
+    --accent-2: #2f6fed;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--text);
+  }
+  .deck {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+  }
+  .slide {
+    background: var(--slide-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    margin: 24px 16px;
+    padding: 48px 56px;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    page-break-after: always;
+  }
+  .slide.cover {
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #fff;
+  }
+  .slide.cover h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+  .slide.cover p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+  }
+  .kicker {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .kicker .num {
+    color: var(--accent-2);
+  }
+  h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin: 0 0 22px;
+  }
+  h2 .hl {
+    color: var(--accent);
+  }
+  ul {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    padding-left: 1.2em;
+    margin: 0;
+  }
+  ul.sub {
+    margin-top: 6px;
+    font-size: 1.02rem;
+  }
+  li { margin-bottom: 10px; }
+  li strong { color: var(--accent-2); }
+  .charts {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .charts img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .charts.one img { max-height: 320px; }
+  .charts.center { justify-content: center; }
+  .charts.two { flex-wrap: nowrap; }
+  .charts.two > div { flex: 1; min-width: 0; }
+  .charts.two img { width: 100%; height: auto; }
+  .content-row {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .content-row .text { flex: 1; min-width: 0; }
+  .content-row .visual { flex: 1; min-width: 0; text-align: center; }
+  .closing ul { font-size: 1rem; color: var(--muted); }
+  .nav {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  .nav button {
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .nav button:hover { background: rgba(255,255,255,0.28); }
+  @media print {
+    body { background: #fff; }
+    .slide { box-shadow: none; margin: 0; min-height: 100vh; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <section class="slide cover">
+    <h1>Finding Nicole's home:<br>a data-driven shortlist</h1>
+    <p>King County housing data &middot; May 2014 &ndash; May 2015</p>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Situation</span></div>
+    <h2>Nicole wants a lively, central home she can afford <span class="hl">within a year</span></h2>
+    <ul>
+      <li>1&ndash;2 bedrooms, 485&ndash;645 sqft</li>
+      <li>Near a downtown</li>
+      <li>Middle price range</li>
+      <li>Move within 12 months</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Complication</span></div>
+    <h2>"Lively and central" isn't a column in the data &mdash; <span class="hl">we had to define it</span></h2>
+    <ul>
+      <li><strong>Downtown</strong> = within 5 miles of Seattle, Bellevue, Kent, Renton, or Federal Way</li>
+      <li><strong>Her home</strong> = 1&ndash;2 bedrooms, 485&ndash;645 sqft</li>
+      <li><strong>Timing matters</strong> &mdash; seasonality should factor into when she buys</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Complication</span></div>
+    <h2>Not every downtown actually <span class="hl">earns the label</span></h2>
+    <ul>
+      <li>Being 5 miles from a city center doesn't guarantee it's priced or built like a real downtown</li>
+      <li>That has to be <strong>tested</strong>, not assumed</li>
+    </ul>
+    <div class="charts one center">
+      <img src="slide_assets/map_downtowns.png" alt="Map of houses colored by closest downtown">
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Resolution</span></div>
+    <h2>Only <span class="hl">2 of 5</span> downtowns are actually pricier than the outskirts</h2>
+    <ul>
+      <li>Pooling all 5 downtowns hid the effect (not significant, p = 0.46)</li>
+      <li>Tested individually:
+        <ul class="sub">
+          <li><strong>Bellevue is 82.7% pricier</strong> than outskirts (significant)</li>
+          <li><strong>Seattle is 23.9% pricier</strong> (significant, but under the 50% bar)</li>
+          <li>Renton, Kent, Federal Way &mdash; cheaper, not significant</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Resolution</span></div>
+    <h2><span class="hl">Seattle</span> is the only downtown that's genuinely denser than the outskirts</h2>
+    <ul>
+      <li>Downtown overall is 7.7% denser (significant)</li>
+      <li>By city:
+        <ul class="sub">
+          <li><strong>Seattle's lots are 45.4% smaller</strong> than outskirts (significant)</li>
+          <li>Kent, Renton, Federal Way &mdash; no significant difference</li>
+          <li>Bellevue &mdash; actually 26% <em>bigger</em>, not smaller</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Resolution</span></div>
+    <h2>Density, not price, decides "lively" &mdash; and <span class="hl">Seattle</span> is the only one that qualifies</h2>
+    <ul>
+      <li>A downtown only needs to be denser to count as "lively"</li>
+      <li>Pricier is a bonus, not a requirement</li>
+      <li>Of the 5 downtowns, only <strong>Seattle</strong> clears the density bar</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Resolution</span></div>
+    <h2><span class="hl">11 homes</span> match Nicole's criteria today &mdash; all in Seattle</h2>
+    <ul>
+      <li>Her size range (485&ndash;645 sqft, 1&ndash;2BR) in Seattle: <strong>$280,500&ndash;$383,944</strong> (middle 50% of the market)</li>
+      <li>Capping at that price ceiling: <strong>11 matching homes</strong>, all in Seattle</li>
+      <li>Ranked by build quality (grade, then condition)</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Resolution</span></div>
+    <h2>Spring is when the market peaks &mdash; but the <span class="hl">winter discount</span> is real</h2>
+    <div class="content-row">
+      <div class="text">
+        <ul>
+          <li>Sales aren't spread evenly across the year (p &asymp; 0)</li>
+          <li>Peak season: <strong>Spring (30.2%)</strong>, not Summer (29.3%) as assumed</li>
+          <li>Winter homes sold for <strong>5.5% less</strong></li>
+          <li>Checked per sqft too: still <strong>4.9% cheaper</strong> in winter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="charts two">
+      <div><img src="slide_assets/sales_by_season.png" alt="Sales volume by season"></div>
+      <div><img src="slide_assets/price_per_sqft_season.png" alt="Median price per sqft by season, winter highlighted"></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Recommendation</span></div>
+    <h2>Three takeaways for <span class="hl">Nicole</span></h2>
+    <ul>
+      <li>Focus the search on <strong>Seattle</strong> &mdash; the only downtown that's genuinely lively (dense); budget roughly <strong>$280K&ndash;$384K</strong></li>
+      <li>Start with the <strong>11 matching homes</strong>, best-graded and best-condition first</li>
+      <li><strong>Buy in winter</strong> &mdash; the ~5% discount holds even after controlling for house size, worth roughly <strong>$7K&ndash;$16K</strong> on the shortlisted homes</li>
+    </ul>
+  </section>
+
+  <section class="slide closing">
+    <div class="kicker">Caveats &mdash; mention out loud, not a slide</div>
+    <h2>What this data can't tell us</h2>
+    <ul>
+      <li>Sold-home data from May 2014&ndash;May 2015, not live listings &mdash; use these zip codes and price bands as a filter on today's market</li>
+      <li><code>sqft_lot15</code> is a density proxy, not a direct measure of "lively"</li>
+      <li>Seasonality reflects one observed year, not a confirmed recurring pattern</li>
+    </ul>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button onclick="window.scrollBy({top: -window.innerHeight, behavior: 'smooth'})">&uarr; Prev</button>
+  <button onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">&darr; Next</button>
+</div>
+
+<script>
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+    window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    window.scrollBy({top: -window.innerHeight, behavior: 'smooth'});
+  }
+});
+</script>
+</body>
+</html>
