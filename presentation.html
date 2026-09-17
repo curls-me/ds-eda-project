@@ -12,6 +12,7 @@
     --accent: #ea7c1f;
     --accent-2: #2f6fed;
     --border: #e2e8f0;
+    --row-alt: #f8fafc;
   }
   * { box-sizing: border-box; }
   body {
@@ -21,7 +22,7 @@
     color: var(--text);
   }
   .deck {
-    max-width: 960px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 24px 0 80px;
   }
@@ -30,7 +31,7 @@
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     margin: 24px 16px;
-    padding: 48px 56px;
+    padding: 44px 52px;
     min-height: 540px;
     display: flex;
     flex-direction: column;
@@ -64,49 +65,88 @@
     color: var(--accent-2);
   }
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 1.3;
-    margin: 0 0 22px;
+    margin: 0 0 18px;
   }
   h2 .hl {
     color: var(--accent);
   }
+  h3.group {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 16px 0 6px;
+  }
+  h3.group:first-of-type { margin-top: 0; }
   ul {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.08rem;
+    line-height: 1.55;
     padding-left: 1.2em;
     margin: 0;
   }
   ul.sub {
     margin-top: 6px;
-    font-size: 1.02rem;
+    font-size: 0.98rem;
   }
-  li { margin-bottom: 10px; }
+  li { margin-bottom: 8px; }
   li strong { color: var(--accent-2); }
-  .charts {
+
+  /* side-by-side layout: text left, chart/table filling height on the right */
+  .split {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    gap: 32px;
+    align-items: stretch;
+    flex: 1;
   }
-  .charts img {
-    max-width: 100%;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-  }
-  .charts.one img { max-height: 320px; }
+  .split .text { flex: 1.1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+  .split .visual { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; }
+  .split .visual img { max-width: 100%; max-height: 460px; object-fit: contain; border: 1px solid var(--border); border-radius: 6px; }
+  .split .visual .table-wrap { width: 100%; }
+
+  .charts { display: flex; gap: 20px; margin-top: 18px; flex-wrap: wrap; }
   .charts.center { justify-content: center; }
+  .charts img { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+  .charts.one img { max-height: 300px; }
   .charts.two { flex-wrap: nowrap; }
   .charts.two > div { flex: 1; min-width: 0; }
   .charts.two img { width: 100%; height: auto; }
-  .content-row {
-    display: flex;
-    gap: 32px;
-    align-items: center;
+
+  table.slide-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
   }
-  .content-row .text { flex: 1; min-width: 0; }
-  .content-row .visual { flex: 1; min-width: 0; text-align: center; }
+  table.slide-table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  table.slide-table th, table.slide-table td {
+    padding: 7px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+  }
+  table.slide-table th:first-child, table.slide-table td:first-child {
+    text-align: left;
+  }
+  table.slide-table thead th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid var(--border);
+  }
+  table.slide-table tbody tr:nth-child(even) { background: var(--row-alt); }
+  table.slide-table tbody tr.hl-row td { color: var(--accent-2); font-weight: 600; }
+
   .closing ul { font-size: 1rem; color: var(--muted); }
   .nav {
     position: fixed;
@@ -143,55 +183,70 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Situation</span></div>
-    <h2>Nicole wants a lively, central home she can afford <span class="hl">within a year</span></h2>
-    <ul>
-      <li>1&ndash;2 bedrooms, 485&ndash;645 sqft</li>
-      <li>Near a downtown</li>
-      <li>Middle price range</li>
-      <li>Move within 12 months</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <div class="kicker"><span class="num">Complication</span></div>
-    <h2>"Lively and central" isn't a column in the data &mdash; <span class="hl">we had to define it</span></h2>
-    <ul>
-      <li><strong>Downtown</strong> = within 5 miles of Seattle, Bellevue, Kent, Renton, or Federal Way</li>
-      <li><strong>Her home</strong> = 1&ndash;2 bedrooms, 485&ndash;645 sqft</li>
-      <li><strong>Timing matters</strong> &mdash; seasonality should factor into when she buys</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <div class="kicker"><span class="num">Complication</span></div>
-    <h2>Not every downtown actually <span class="hl">earns the label</span></h2>
-    <ul>
-      <li>Being 5 miles from a city center doesn't guarantee it's priced or built like a real downtown</li>
-      <li>That has to be <strong>tested</strong>, not assumed</li>
-    </ul>
-    <div class="charts one center">
-      <img src="slide_assets/map_downtowns.png" alt="Map of houses colored by closest downtown">
+    <div class="kicker"><span class="num">Slide 1</span> &middot; Situation, assumptions &amp; hypotheses</div>
+    <div class="split">
+      <div class="text">
+        <h2>Meet Nicole &mdash; a single first-time buyer, no kids</h2>
+        <ul>
+          <li>1&ndash;2 bedrooms, 485&ndash;645 sqft</li>
+          <li>Wants lively and central, on a mid-range budget</li>
+          <li>Buying within the next 12 months</li>
+        </ul>
+        <h3 class="group">How we defined "lively and central"</h3>
+        <ul>
+          <li><strong>Downtown</strong> = within 5 miles of Seattle, Bellevue, Kent, Renton, or Federal Way</li>
+          <li>Timing and price both matter &mdash; factor in seasonality</li>
+        </ul>
+        <h3 class="group">What we're testing</h3>
+        <ul>
+          <li>Downtown homes cost 50%+ more than the outskirts</li>
+          <li>Smaller neighboring lots = denser = more "lively"</li>
+          <li>Winter sales run up to 5% cheaper</li>
+        </ul>
+      </div>
+      <div class="visual">
+        <img src="slide_assets/map_downtowns.png" alt="Map of houses colored by closest downtown">
+      </div>
     </div>
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Resolution</span></div>
-    <h2>Only <span class="hl">2 of 5</span> downtowns are actually pricier than the outskirts</h2>
-    <ul>
-      <li>Pooling all 5 downtowns hid the effect (not significant, p = 0.46)</li>
-      <li>Tested individually:
-        <ul class="sub">
-          <li><strong>Bellevue is 82.7% pricier</strong> than outskirts (significant)</li>
-          <li><strong>Seattle is 23.9% pricier</strong> (significant, but under the 50% bar)</li>
-          <li>Renton, Kent, Federal Way &mdash; cheaper, not significant</li>
+    <div class="kicker"><span class="num">Slide 2</span> &middot; Resolution</div>
+    <div class="split">
+      <div class="text">
+        <h2>Only <span class="hl">2 of 5</span> downtowns are actually pricier than the outskirts</h2>
+        <ul>
+          <li>Pooling all 5 downtowns hid the effect (not significant, p = 0.46)</li>
+          <li>Tested individually:
+            <ul class="sub">
+              <li><strong>Bellevue is 82.7% pricier</strong> than outskirts (significant)</li>
+              <li><strong>Seattle is 23.9% pricier</strong> (significant, but under the 50% bar)</li>
+              <li>Renton, Kent, Federal Way &mdash; cheaper, not significant</li>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+      <div class="visual">
+        <div class="table-wrap">
+          <table class="slide-table">
+            <caption>Median price by town</caption>
+            <thead><tr><th>Town</th><th>Median price</th></tr></thead>
+            <tbody>
+              <tr class="hl-row"><td>Bellevue</td><td>$745,000</td></tr>
+              <tr class="hl-row"><td>Seattle</td><td>$569,950</td></tr>
+              <tr><td>Other (outskirts)</td><td>$460,000</td></tr>
+              <tr><td>Renton</td><td>$330,000</td></tr>
+              <tr><td>Kent</td><td>$286,543</td></tr>
+              <tr><td>Federal Way</td><td>$262,250</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Resolution</span></div>
+    <div class="kicker"><span class="num">Slide 3</span> &middot; Resolution</div>
     <h2><span class="hl">Seattle</span> is the only downtown that's genuinely denser than the outskirts</h2>
     <ul>
       <li>Downtown overall is 7.7% denser (significant)</li>
@@ -203,41 +258,55 @@
         </ul>
       </li>
     </ul>
+    <div class="charts one center">
+      <img src="slide_assets/density_boxplot.png" alt="Neighboring lot size by town, smaller lots = denser">
+    </div>
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Resolution</span></div>
-    <h2>Density, not price, decides "lively" &mdash; and <span class="hl">Seattle</span> is the only one that qualifies</h2>
-    <ul>
-      <li>A downtown only needs to be denser to count as "lively"</li>
-      <li>Pricier is a bonus, not a requirement</li>
-      <li>Of the 5 downtowns, only <strong>Seattle</strong> clears the density bar</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <div class="kicker"><span class="num">Resolution</span></div>
-    <h2><span class="hl">11 homes</span> match Nicole's criteria today &mdash; all in Seattle</h2>
-    <ul>
-      <li>Her size range (485&ndash;645 sqft, 1&ndash;2BR) in Seattle: <strong>$280,500&ndash;$383,944</strong> (middle 50% of the market)</li>
-      <li>Capping at that price ceiling: <strong>11 matching homes</strong>, all in Seattle</li>
-      <li>Ranked by build quality (grade, then condition)</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <div class="kicker"><span class="num">Resolution</span></div>
-    <h2>Spring is when the market peaks &mdash; but the <span class="hl">winter discount</span> is real</h2>
-    <div class="content-row">
+    <div class="kicker"><span class="num">Slide 4</span> &middot; Resolution</div>
+    <div class="split">
       <div class="text">
+        <h2><span class="hl">11 homes</span> match Nicole's criteria today &mdash; all in Seattle</h2>
         <ul>
-          <li>Sales aren't spread evenly across the year (p &asymp; 0)</li>
-          <li>Peak season: <strong>Spring (30.2%)</strong>, not Summer (29.3%) as assumed</li>
-          <li>Winter homes sold for <strong>5.5% less</strong></li>
-          <li>Checked per sqft too: still <strong>4.9% cheaper</strong> in winter</li>
+          <li>Her size range (485&ndash;645 sqft, 1&ndash;2BR) in Seattle: <strong>$280,500&ndash;$383,944</strong> (middle 50% of the market)</li>
+          <li>Capping at that price ceiling: <strong>11 matching homes</strong>, all in Seattle</li>
+          <li>Ranked by build quality (grade, then condition)</li>
         </ul>
       </div>
+      <div class="visual">
+        <div class="table-wrap">
+          <table class="slide-table">
+            <caption>11-home shortlist, ranked by grade/condition</caption>
+            <thead><tr><th>Grade</th><th>Cond.</th><th>Beds</th><th>Sqft</th><th>Price</th></tr></thead>
+            <tbody>
+              <tr><td>7</td><td>4</td><td>1</td><td>590</td><td>$202,000</td></tr>
+              <tr><td>7</td><td>3</td><td>1</td><td>550</td><td>$353,000</td></tr>
+              <tr><td>6</td><td>4</td><td>2</td><td>610</td><td>$286,000</td></tr>
+              <tr><td>6</td><td>3</td><td>1</td><td>520</td><td>$295,000</td></tr>
+              <tr><td>6</td><td>3</td><td>1</td><td>620</td><td>$382,888</td></tr>
+              <tr><td>6</td><td>3</td><td>1</td><td>600</td><td>$229,000</td></tr>
+              <tr><td>6</td><td>3</td><td>1</td><td>640</td><td>$340,000</td></tr>
+              <tr><td>5</td><td>3</td><td>2</td><td>630</td><td>$315,000</td></tr>
+              <tr><td>5</td><td>3</td><td>1</td><td>520</td><td>$275,000</td></tr>
+              <tr><td>5</td><td>2</td><td>1</td><td>570</td><td>$310,000</td></tr>
+              <tr><td>5</td><td>2</td><td>2</td><td>590</td><td>$156,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Slide 5</span> &middot; Resolution</div>
+    <h2>Spring is when the market peaks &mdash; but the <span class="hl">winter discount</span> is real</h2>
+    <ul>
+      <li>Sales aren't spread evenly across the year (p &asymp; 0)</li>
+      <li>Peak season: <strong>Spring (30.2%)</strong>, not Summer (29.3%) as assumed</li>
+      <li>Winter homes sold for <strong>5.5% less</strong></li>
+      <li>Checked per sqft too: still <strong>4.9% cheaper</strong> in winter</li>
+    </ul>
     <div class="charts two">
       <div><img src="slide_assets/sales_by_season.png" alt="Sales volume by season"></div>
       <div><img src="slide_assets/price_per_sqft_season.png" alt="Median price per sqft by season, winter highlighted"></div>
@@ -245,13 +314,38 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Recommendation</span></div>
-    <h2>Three takeaways for <span class="hl">Nicole</span></h2>
-    <ul>
-      <li>Focus the search on <strong>Seattle</strong> &mdash; the only downtown that's genuinely lively (dense); budget roughly <strong>$280K&ndash;$384K</strong></li>
-      <li>Start with the <strong>11 matching homes</strong>, best-graded and best-condition first</li>
-      <li><strong>Buy in winter</strong> &mdash; the ~5% discount holds even after controlling for house size, worth roughly <strong>$7K&ndash;$16K</strong> on the shortlisted homes</li>
-    </ul>
+    <div class="kicker"><span class="num">Slide 6</span> &middot; Recommendation</div>
+    <div class="split">
+      <div class="text">
+        <h2>Three takeaways for <span class="hl">Nicole</span></h2>
+        <ul>
+          <li>Focus the search on <strong>Seattle</strong> &mdash; the only downtown that's genuinely lively (dense); budget roughly <strong>$280K&ndash;$384K</strong></li>
+          <li>Start with the <strong>11 matching homes</strong>, best-graded and best-condition first</li>
+          <li><strong>Buy in winter</strong> &mdash; the ~5% discount holds even after controlling for house size, worth roughly <strong>$7K&ndash;$16K</strong> on the shortlisted homes</li>
+        </ul>
+      </div>
+      <div class="visual">
+        <div class="table-wrap">
+          <table class="slide-table">
+            <caption>Final shortlist, priced for winter</caption>
+            <thead><tr><th>Grade</th><th>Cond.</th><th>Winter price</th><th>Savings vs. summer</th></tr></thead>
+            <tbody>
+              <tr><td>7</td><td>4</td><td>$193,071</td><td>$8,929</td></tr>
+              <tr><td>7</td><td>3</td><td>$327,831</td><td>$15,161</td></tr>
+              <tr><td>6</td><td>4</td><td>$273,358</td><td>$12,642</td></tr>
+              <tr><td>6</td><td>3</td><td>$285,815</td><td>$13,218</td></tr>
+              <tr><td>6</td><td>3</td><td>$355,588</td><td>$16,444</td></tr>
+              <tr><td>6</td><td>3</td><td>$212,672</td><td>$9,835</td></tr>
+              <tr><td>6</td><td>3</td><td>$329,414</td><td>$15,234</td></tr>
+              <tr><td>5</td><td>3</td><td>$292,540</td><td>$13,529</td></tr>
+              <tr><td>5</td><td>3</td><td>$275,000</td><td>$12,718</td></tr>
+              <tr><td>5</td><td>2</td><td>$300,348</td><td>$13,890</td></tr>
+              <tr><td>5</td><td>2</td><td>$151,143</td><td>$6,990</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="slide closing">
