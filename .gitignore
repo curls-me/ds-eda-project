@@ -145,3 +145,7 @@ models/*.pkl
 
 # vscode Stuff
 .vscode
+
+# Claude Code local state (worktrees, caches) — but keep repo-scoped skills tracked
+.claude/*
+!.claude/skills/
