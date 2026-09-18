@@ -56,6 +56,9 @@ Marina · King County housing data, May 2014 – May 2015
 
 ## Slide 3 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
+**The assumption this rests on** (callout box, above the findings)
+> **Downtown = within 5 miles of a city centre.** We took the coordinates of the 5 biggest King County city centres and measured every home's straight-line (haversine) distance to the nearest one. Within 5 miles, the home is tagged with that city; further than 5 miles from all five, it counts as outskirts. Straight-line, not driving time — and the 5-mile radius is our choice, not something the data suggested, so a different radius would move borderline homes between the two groups.
+
 - Pooling all 5 downtowns hid the effect (not significant, p = 0.46)
 - Tested individually, each city vs. its own local outskirts:
   - **Bellevue is 31.9% pricier** than its own outskirts (significant, but under the 50% bar)

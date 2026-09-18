@@ -35,6 +35,9 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 
 ## Slide 3 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
+- Take the assumption box first, before any result. Every home has a lat/long, so we hard-coded the coordinates of the 5 city centres and computed the haversine (great-circle) distance from each home to each centre. The nearest of those five decides which city a home belongs to; if even the nearest is more than 5 miles away, the home is outskirts. Same calculation runs over the whole cleaned dataset, so the tagging is reusable for later slices.
+- Two caveats to say out loud: it's straight-line distance, not drive time, so a home 4 miles away across water is treated as closer than one 6 miles away down a straight road. And the 5-mile radius is our own pick — nothing in the data suggests it. Homes near the boundary would flip groups under a different radius.
+- The map on slide 1 is the sanity check for exactly this: the tagging should show up as visible clusters around each city centre, surrounded by "Other". If someone doubts the definition, point back at that map.
 - Pooling all 5 downtowns together hid the effect entirely (not significant, p = 0.46) — this is the reason we broke it out by city instead of testing "downtown" as one blob.
 - Tested each city against its own local outskirts (not one shared outskirts number) — the area just outside Bellevue isn't priced like the area just outside Federal Way, so pooling them would have been misleading.
 - Bellevue is 31.9% pricier than its own outskirts and significant, but falls short of the 50%+ hypothesis. Seattle is pricier too (29.1%) and significant, also under the 50% bar.
