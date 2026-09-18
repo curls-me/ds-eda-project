@@ -57,7 +57,8 @@ Every hypothesis was tested on *her* slice of the market — small units — not
 | [**04 - EDA notebook**](04_eda.ipynb) | **The main deliverable.** Full analysis: loading, descriptive statistics, distributions, assumptions, hypotheses, cleaning, the three hypothesis tests, and the final shortlist — with commentary and takeaways throughout. |
 | [**03 - Fetching the data**](03_fetching_the_data_eda.ipynb) | Connects to the PostgreSQL database with psycopg2/SQLAlchemy, joins the two `eda` tables and writes the combined dataset to `data/`. |
 | [**Presentation slides (source text)**](presentation_slides.md) | The slide copy: cover plus 7 content slides, written for a non-technical audience. Editing this file is how the presentation changes. |
-| [**Presentation (HTML)**](presentation.html) | The rendered, full-screen slide deck built from the slide copy above. Open it in a browser. |
+| [**Presentation (PDF)**](presentation.pdf) | The deck as a PDF export — 8 pages, 16:9 landscape. This is the version submitted with the project. |
+| [**Presentation (HTML)**](presentation.html) | The same deck as a full-screen browser version, built from the slide copy above. Regenerate the PDF from it with the command below. |
 | [**Presentation outline**](presentation_outline.md) | The planning document behind the deck — SCR structure (Situation / Complication / Resolution), slide budget, and a checklist cross-check. |
 | [**Slide assets**](slide_assets/) | Charts exported from the notebook for the deck: [downtown map](slide_assets/map_downtowns.png), [density boxplot](slide_assets/density_boxplot.png), [sales by season](slide_assets/sales_by_season.png), [price per sqft by season](slide_assets/price_per_sqft_season.png). |
 | [**Collaboration retrospective**](collaboration-report.md) | A write-up of how the three days of work actually unfolded, including the hypotheses that reversed and why. |
@@ -107,6 +108,18 @@ code .
 ```
 
 Then select the `.venv` interpreter as the notebook kernel. Run [03 - Fetching the data](03_fetching_the_data_eda.ipynb) first to produce the CSV in `data/`, then work through [04 - EDA](04_eda.ipynb).
+
+### 4. Regenerate the presentation PDF (optional)
+
+`presentation.pdf` is exported from `presentation.html` with headless Chrome. After editing the slides, re-export with:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --no-pdf-header-footer \
+  --print-to-pdf="$PWD/presentation.pdf" "file://$PWD/presentation.html"
+```
+
+The page size (16:9 landscape, one slide per page) is set by the `@media print` rules in `presentation.html`.
 
 ---
 
