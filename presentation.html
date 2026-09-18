@@ -211,7 +211,40 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 2</span> &middot; Resolution</div>
+    <div class="kicker"><span class="num">Slide 2</span> &middot; Situation &mdash; the data</div>
+    <div class="split">
+      <div class="text">
+        <h2>One year of sales, <span class="hl">70 zip codes</span> &mdash; enough to compare neighbourhoods</h2>
+        <ul>
+          <li><strong>21,597 sales</strong> of <strong>21,420 homes</strong>, May 2014 &ndash; May 2015 &mdash; 177 homes sold twice (real re-sales, kept)</li>
+          <li><strong>70 zip codes</strong> across King County, 50&ndash;602 sales each (median 283)</li>
+          <li><strong>21 columns</strong> per sale &mdash; price, size, rooms, build quality, location, plus the 15 nearest neighbours</li>
+          <li>The market it covers: <strong>$78K&ndash;$7.7M</strong> (median $450K), 370&ndash;13,540 sqft, built 1900&ndash;2015</li>
+          <li>Gaps are small and fillable &mdash; <code>yr_renovated</code> 17.8%, <code>waterfront</code> 11.1%, <code>sqft_basement</code> 2.1%, <code>view</code> 0.3%: filled in, no rows thrown away</li>
+          <li><strong>Not in the data: walkability, nightlife, commute time</strong> &mdash; so "lively" needs a proxy</li>
+        </ul>
+      </div>
+      <div class="visual">
+        <div class="table-wrap">
+          <table class="slide-table">
+            <caption>What's available, grouped</caption>
+            <thead><tr><th>Group</th><th>Columns</th></tr></thead>
+            <tbody>
+              <tr><td>Price &amp; date</td><td>price, date</td></tr>
+              <tr><td>Size</td><td>sqft_living, sqft_lot, sqft_above, sqft_basement</td></tr>
+              <tr><td>Rooms</td><td>bedrooms, bathrooms, floors</td></tr>
+              <tr><td>Build quality</td><td>grade, condition, view, waterfront, yr_built, yr_renovated</td></tr>
+              <tr><td>Location</td><td>zipcode, lat, long</td></tr>
+              <tr class="hl-row"><td>Neighbours (15 nearest)</td><td>sqft_living15, sqft_lot15</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Slide 3</span> &middot; Resolution</div>
     <div class="split">
       <div class="text">
         <h2>Only <span class="hl">2 of 5</span> downtowns are actually pricier than the outskirts</h2>
@@ -245,7 +278,7 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 3</span> &middot; Resolution</div>
+    <div class="kicker"><span class="num">Slide 4</span> &middot; Resolution</div>
     <h2><span class="hl">Seattle</span> is the only downtown that's genuinely denser than the outskirts</h2>
     <ul>
       <li>Downtown overall is 7.7% denser (significant)</li>
@@ -263,7 +296,7 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 4</span> &middot; Resolution</div>
+    <div class="kicker"><span class="num">Slide 5</span> &middot; Resolution</div>
     <div class="split">
       <div class="text">
         <h2><span class="hl">11 homes</span> match Nicole's criteria today &mdash; all in Seattle</h2>
@@ -298,7 +331,7 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 5</span> &middot; Resolution</div>
+    <div class="kicker"><span class="num">Slide 6</span> &middot; Resolution</div>
     <h2>Spring is when the market peaks &mdash; but the <span class="hl">winter discount</span> is real</h2>
     <ul>
       <li>Sales aren't spread evenly across the year (p &asymp; 0)</li>
@@ -313,7 +346,7 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 6</span> &middot; Recommendation</div>
+    <div class="kicker"><span class="num">Slide 7</span> &middot; Recommendation</div>
     <div class="split">
       <div class="text">
         <h2>Three takeaways for <span class="hl">Nicole</span></h2>

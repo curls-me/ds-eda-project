@@ -34,7 +34,29 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 2 — Only 2 of 5 downtowns are actually pricier than the outskirts
+## Slide 2 — One year of sales, 70 zip codes — enough to compare neighbourhoods
+
+- **21,597 sales** of **21,420 homes**, May 2014 – May 2015 (177 homes sold twice — kept, they're real re-sales, not duplicates)
+- **70 zip codes** across King County, 50–602 sales each (median 283) — every area has enough sales to compare
+- **21 columns** per sale: price, size, rooms, build quality, location, plus the 15 nearest neighbours
+- The market it covers: **$78K–$7.7M** (median $450K), 370–13,540 sqft, built 1900–2015
+- Gaps are small and fillable — `yr_renovated` 17.8%, `waterfront` 11.1%, `sqft_basement` 2.1%, `view` 0.3%: filled in, no rows thrown away (one 33-bedroom typo removed)
+- **Not in the data: walkability, nightlife, commute time** — which is why "lively" needs a proxy
+
+**[Table: what's available, grouped]** — full height, right of text
+
+| Group | Columns |
+|---|---|
+| Price & date | price, date |
+| Size | sqft_living, sqft_lot, sqft_above, sqft_basement |
+| Rooms | bedrooms, bathrooms, floors |
+| Build quality | grade, condition, view, waterfront, yr_built, yr_renovated |
+| Location | zipcode, lat, long |
+| Neighbours (15 nearest) | sqft_living15, sqft_lot15 |
+
+---
+
+## Slide 3 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
 - Pooling all 5 downtowns hid the effect (not significant, p = 0.46)
 - Tested individually, each city vs. its own local outskirts:
@@ -54,7 +76,7 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 3 — Seattle is the only downtown that's genuinely denser than the outskirts
+## Slide 4 — Seattle is the only downtown that's genuinely denser than the outskirts
 
 - Downtown overall is 7.7% denser (significant)
 - By city:
@@ -66,7 +88,7 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 4 — 11 homes match Nicole's criteria today — all in Seattle
+## Slide 5 — 11 homes match Nicole's criteria today — all in Seattle
 
 - Her size range (485–645 sqft, 1–2BR) in Seattle: **$280,500–$383,944** (middle 50% of the market)
 - Capping at that price ceiling: **11 matching homes**, all in Seattle
@@ -90,7 +112,7 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 5 — Spring is when the market peaks — but the winter discount is real
+## Slide 6 — Spring is when the market peaks — but the winter discount is real
 
 - Sales aren't spread evenly across the year (p ≈ 0)
 - Peak season: **Spring (30.2%)**, not Summer (29.3%) as assumed
@@ -102,7 +124,7 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 6 — Three takeaways for Nicole
+## Slide 7 — Three takeaways for Nicole
 
 1. Focus the search on **Seattle** — the only downtown that's genuinely lively (dense); budget roughly **$280K–$384K**
 2. Start with the **11 matching homes**, best-graded and best-condition first
