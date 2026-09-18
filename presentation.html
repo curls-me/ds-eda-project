@@ -223,8 +223,28 @@
   }
   .nav button:hover { background: rgba(255,255,255,0.28); }
   @media print {
-    body { background: #fff; }
-    .slide { box-shadow: none; margin: 0; height: 100vh; overflow: visible; }
+    /* 16:9 landscape, matching a standard slide deck (1280x720 @ 96dpi) */
+    @page { size: 13.333in 7.5in; margin: 0; }
+    html, body {
+      background: #fff;
+      height: auto;
+      scroll-snap-type: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .deck { max-width: none; }
+    .slide {
+      box-shadow: none;
+      margin: 0;
+      border-bottom: none;
+      width: 13.333in;
+      height: 7.5in;
+      overflow: hidden;
+      break-after: page;
+      page-break-after: always;
+      padding: 0.45in 0.6in;
+    }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
     .nav { display: none; }
   }
 </style>
