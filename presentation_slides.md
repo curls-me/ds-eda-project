@@ -1,8 +1,7 @@
 # Finding Nicole's Home: A Data-Driven Shortlist
 
 King County Housing EDA — presentation copy
-(Edit this file directly; it's the source text for `presentation.html`.
-Full talking points live in `speaking_notes.md`, kept separate so this stays just slide bullets.)
+(Edit this file directly; it's the source text for `presentation.html`.)
 
 ---
 
@@ -142,19 +141,19 @@ Marina · King County housing data, May 2014 – May 2015
 
 **[Table: final shortlist, priced for winter]**
 
-| Grade | Condition | Winter price | Savings vs. spring |
-|---|---|---|---|
-| 7 | 4 | $193,071 | $14,823 |
-| 7 | 3 | $327,831 | $25,169 |
-| 6 | 4 | $273,358 | $20,987 |
-| 6 | 3 | $285,815 | $21,943 |
-| 6 | 3 | $355,588 | $27,300 |
-| 6 | 3 | $212,672 | $16,328 |
-| 6 | 3 | $329,414 | $25,291 |
-| 5 | 3 | $292,540 | $22,460 |
-| 5 | 3 | $275,000 | $21,113 |
-| 5 | 2 | $300,348 | $23,059 |
-| 5 | 2 | $151,143 | $11,604 |
+| Grade | Condition | Built | Beds | Sqft | Winter price | Savings vs. spring |
+|---|---|---|---|---|---|---|
+| 7 | 4 | 1926 | 1 | 590 | $193,071 | $14,823 |
+| 7 | 3 | 2008 | 1 | 550 | $327,831 | $25,169 |
+| 6 | 4 | 1918 | 2 | 610 | $273,358 | $20,987 |
+| 6 | 3 | 1918 | 1 | 520 | $285,815 | $21,943 |
+| 6 | 3 | 1900 | 1 | 620 | $355,588 | $27,300 |
+| 6 | 3 | 1920 | 1 | 600 | $212,672 | $16,328 |
+| 6 | 3 | 1918 | 1 | 640 | $329,414 | $25,291 |
+| 5 | 3 | 1918 | 2 | 630 | $292,540 | $22,460 |
+| 5 | 3 | 1930 | 1 | 520 | $275,000 | $21,113 |
+| 5 | 2 | 1918 | 1 | 570 | $300,348 | $23,059 |
+| 5 | 2 | 1947 | 2 | 590 | $151,143 | $11,604 |
 
 ---
 
