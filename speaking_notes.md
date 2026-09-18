@@ -66,6 +66,7 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 - Two separate claims tested here: sales volume seasonality, and a winter price discount.
 - Chi-square test on the season split confirms sales are not spread evenly through the year (p ≈ 0) — but the actual peak is Spring (30.2%), not Summer as originally hypothesized (Summer is a close second at 29.3%).
 - Winter price discount: raw median price is 5.5% lower in winter (Mann-Whitney, significant). Because a raw price gap could just mean different *kinds* of houses sell in different seasons, we checked price-per-square-foot too (removes house size as a confound) — still 4.9% cheaper in winter, and still significant. The discount isn't an artifact of which houses happen to sell when.
+- Be precise about what 4.9% compares: winter against *the rest of the year pooled*. Slide 7 quotes 7.1% instead, because there it's winter against spring alone, and spring is the priciest season per sqft. Same data, narrower comparison — expect this question.
 - We haven't covered regression yet in the bootcamp, so this per-sqft comparison is the deliberately simpler way to control for size.
 
 ## Slide 7 — Three takeaways for Nicole
@@ -74,10 +75,11 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 - Each home's price is projected across all four seasons. The slide now shows the mechanics, so walk it slowly:
   1. Take the median price per square foot in each season and divide it by the all-year median $/sqft. That gives each season an index against an average year: Winter 0.959, Spring 1.033, Summer 1.004, Fall 0.990. Below 1 = cheaper than a typical month, above 1 = pricier.
   2. Every home in the shortlist sold in some particular season, so its recorded price already carries that season's effect. Divide the price by the index of the season it actually sold in — that removes the effect and leaves a season-neutral price for that specific home.
-  3. Multiply the season-neutral price by whichever season's index you want, and you get what that same home would have cost in that season. Winter vs. summer works out to a 4.4% gap (0.959 vs. 1.004) on every home, which is why the savings column scales with the price of the home.
+  3. Multiply the season-neutral price by whichever season's index you want, and you get what that same home would have cost in that season. Winter vs. spring works out to a 7.1% gap (0.959 vs. 1.033) on every home, which is why the savings column scales with the price of the home.
+- We compare against spring deliberately: it's the most expensive season per sqft, so this is the *largest* saving timing can buy her. Against summer it would be 4.4%, against the rest of the year pooled 4.9% — spring is the honest ceiling, not a flattering pick.
 - Why $/sqft rather than raw price: if bigger houses happen to sell in summer, a raw-price index would attribute their size to the season. Dividing by square footage first removes that.
 - Worth saying plainly if asked: this is a simple index adjustment, not a regression — one factor (season), applied uniformly, with no controls for anything else.
-- Every one of the 11 homes comes out cheapest in winter — the discount isn't cherry-picked, it holds across the whole shortlist. Savings vs. summer range roughly $7K–$16K depending on the home.
+- Every one of the 11 homes comes out cheapest in winter — the discount isn't cherry-picked, it holds across the whole shortlist. Savings vs. spring range roughly $12K–$27K depending on the home.
 - Bottom line to leave Nicole with: shop the Seattle shortlist, favor the higher-graded homes at the top of the list, and time the purchase for winter to capture the seasonal discount on top of everything else.
 
 ## Closing (say out loud, not a slide)

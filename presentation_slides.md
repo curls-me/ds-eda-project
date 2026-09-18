@@ -121,7 +121,8 @@ Marina · King County housing data, May 2014 – May 2015
 - Sales aren't spread evenly across the year (p ≈ 0)
 - Peak season: **Spring (30.2%)**, not Summer (29.3%) as assumed
 - Winter homes sold for **5.5% less**
-- Checked per sqft too: still **4.9% cheaper** in winter — the discount holds up
+- Checked per sqft too: still **4.9% cheaper** than the rest of the year — the discount holds up
+- Spring is also the priciest season per sqft — winter runs **7.1% below** it
 
 **[Chart: sales_by_season.png — sales volume by season]**
 **[Chart: price_per_sqft_season.png — median $/sqft by season, winter highlighted]**
@@ -132,28 +133,28 @@ Marina · King County housing data, May 2014 – May 2015
 
 1. Focus the search on **Seattle** — the only downtown that's genuinely lively (dense); budget roughly **$280K–$384K**
 2. Start with the **11 matching homes**, best-graded and best-condition first
-3. **Buy in winter** — the ~5% discount holds even after controlling for house size, worth roughly **$7K–$16K** on the shortlisted homes
+3. **Buy in winter** — the discount holds even after controlling for house size, worth roughly **$12K–$27K** against buying at the spring peak
 
-**How "savings vs. summer" is worked out** (callout box under the bullets)
+**How "savings vs. spring" is worked out** (callout box under the bullets)
 1. Each season's median $/sqft ÷ the all-year median gives it an index: **Winter 0.959**, Spring 1.033, Summer 1.004, Fall 0.990
 2. Divide a home's price by its own sale season's index, multiply by the target season's
-3. Winter vs. summer: a **4.4% gap** on every home. Uses $/sqft, so house size doesn't skew it
+3. Winter vs. spring, the priciest season: a **7.1% gap** on every home. Uses $/sqft, so house size doesn't skew it
 
 **[Table: final shortlist, priced for winter]**
 
-| Grade | Condition | Winter price | Savings vs. summer |
+| Grade | Condition | Winter price | Savings vs. spring |
 |---|---|---|---|
-| 7 | 4 | $193,071 | $8,929 |
-| 7 | 3 | $327,831 | $15,161 |
-| 6 | 4 | $273,358 | $12,642 |
-| 6 | 3 | $285,815 | $13,218 |
-| 6 | 3 | $355,588 | $16,444 |
-| 6 | 3 | $212,672 | $9,835 |
-| 6 | 3 | $329,414 | $15,234 |
-| 5 | 3 | $292,540 | $13,529 |
-| 5 | 3 | $275,000 | $12,718 |
-| 5 | 2 | $300,348 | $13,890 |
-| 5 | 2 | $151,143 | $6,990 |
+| 7 | 4 | $193,071 | $14,823 |
+| 7 | 3 | $327,831 | $25,169 |
+| 6 | 4 | $273,358 | $20,987 |
+| 6 | 3 | $285,815 | $21,943 |
+| 6 | 3 | $355,588 | $27,300 |
+| 6 | 3 | $212,672 | $16,328 |
+| 6 | 3 | $329,414 | $25,291 |
+| 5 | 3 | $292,540 | $22,460 |
+| 5 | 3 | $275,000 | $21,113 |
+| 5 | 2 | $300,348 | $23,059 |
+| 5 | 2 | $151,143 | $11,604 |
 
 ---
 

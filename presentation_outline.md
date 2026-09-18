@@ -34,13 +34,13 @@ Title, your name, "Finding Nicole's home: a data-driven shortlist."
 8. **11 homes match Nicole's criteria today — all in Seattle**
    - Filtering directly on her target size (485-645 sqft, 1-2BR) within Seattle, the middle of the market runs $280,500–$383,944 (25th-75th percentile). Capping at that ceiling (cheaper is fine too) finds **11 matching homes**, all in Seattle — the only downtown that passed the density test. Ranked by build quality (`grade`, then `condition` as tiebreaker) so the best-built options lead the list.
 9. **Spring is when the market peaks — but the winter discount is real**
-   - Sales aren't evenly spread across the year (chi-square, p≈0) — the peak is **Spring (30.2%)**, not the assumed Summer (29.3%, a close second). Winter homes sold for **5.5% less** than the rest of the year (significant). Checked against house size directly (price per square foot, not a full regression): winter is still **4.9% cheaper per sqft** (significant) — the discount holds up, it isn't just an artifact of which houses happen to sell in winter.
+   - Sales aren't evenly spread across the year (chi-square, p≈0) — the peak is **Spring (30.2%)**, not the assumed Summer (29.3%, a close second). Winter homes sold for **5.5% less** than the rest of the year (significant). Checked against house size directly (price per square foot, not a full regression): winter is still **4.9% cheaper per sqft** than the rest of the year (significant) — the discount holds up, it isn't just an artifact of which houses happen to sell in winter. Spring is also the priciest season per sqft, and winter runs **7.1% below** it.
 
 ## Recommendations (1 slide, rule of three)
 10. **Three takeaways for Nicole**
    - (1) Focus the search on **Seattle** — the only downtown that's genuinely denser (and lively) than its outskirts; realistic budget for her size range is roughly $280K–$384K.
    - (2) Start with the **11 matching homes**, led by the highest-graded, best-condition ones — every one already meets her size, location, density, and budget criteria.
-   - (3) **Buy in winter** — the ~5% seasonal discount holds up even after controlling for house size, worth roughly $7K-$16K on the shortlisted homes specifically.
+   - (3) **Buy in winter** — the seasonal discount holds up even after controlling for house size, worth roughly $12K-$27K on the shortlisted homes against buying at the spring peak.
 
 ## Closing (not counted)
 Caveats to mention verbally rather than as a slide (stay in budget): this is sold-home data from May 2014–May 2015, not live listings — use these zip codes/price bands as a filter on today's market, and note we're assuming that pattern still holds and that a shortlisted home's price stands in for a comparable listing today; `sqft_lot15` is a density proxy, not a direct "lively" measure; seasonality reflects one observed year, not a confirmed recurring pattern.
