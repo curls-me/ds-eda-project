@@ -37,21 +37,20 @@ Marina · King County housing data, May 2014 – May 2015
 ## Slide 2 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
 - Pooling all 5 downtowns hid the effect (not significant, p = 0.46)
-- Tested individually:
-  - **Bellevue is 82.7% pricier** than outskirts (significant)
-  - **Seattle is 23.9% pricier** (significant, but under the 50% bar)
-  - Renton, Kent, Federal Way — cheaper, not significant
+- Tested individually, each city vs. its own local outskirts:
+  - **Bellevue is 31.9% pricier** than its own outskirts (significant, but under the 50% bar)
+  - **Seattle is 29.1% pricier** (significant, but under the 50% bar)
+  - Renton (-15.4%), Kent (-9.0%), Federal Way (-12.7%) — cheaper than their own outskirts, not significant
 
-**[Table: median price by town]** — full height, right of text
+**[Table: median price, downtown vs. that city's own outskirts]** — full height, right of text
 
-| Town | Median price |
-|---|---|
-| Bellevue | $745,000 |
-| Seattle | $569,950 |
-| Other (outskirts) | $460,000 |
-| Renton | $330,000 |
-| Kent | $286,543 |
-| Federal Way | $262,250 |
+| Town | Downtown median | Outskirts median | % diff |
+|---|---|---|---|
+| Bellevue | $745,000 | $565,000 | +31.9% |
+| Seattle | $569,950 | $441,375 | +29.1% |
+| Renton | $330,000 | $390,000 | -15.4% |
+| Kent | $286,543 | $314,950 | -9.0% |
+| Federal Way | $262,250 | $300,250 | -12.7% |
 
 ---
 

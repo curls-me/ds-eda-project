@@ -25,9 +25,10 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 ## Slide 2 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
 - Pooling all 5 downtowns together hid the effect entirely (not significant, p = 0.46) — this is the reason we broke it out by city instead of testing "downtown" as one blob.
-- Bellevue clears the 50%+ hypothesis comfortably (82.7% pricier, significant). Seattle is pricier too (23.9%) and significant, but falls short of the 50% bar we set going in.
-- Renton, Kent, and Federal Way are actually cheaper than the outskirts, and not statistically significant — so "downtown = pricier" only holds for 2 of the 5 cities.
-- The median-price table on this slide is the same ordering used throughout: highest to lowest.
+- Tested each city against its own local outskirts (not one shared outskirts number) — the area just outside Bellevue isn't priced like the area just outside Federal Way, so pooling them would have been misleading.
+- Bellevue is 31.9% pricier than its own outskirts and significant, but falls short of the 50%+ hypothesis. Seattle is pricier too (29.1%) and significant, also under the 50% bar.
+- Renton, Kent, and Federal Way are actually cheaper than their own outskirts, and not statistically significant — so "downtown = pricier" only holds for 2 of the 5 cities, and even those 2 don't clear the 50% bar we set going in.
+- The median-price table on this slide is the same ordering used throughout: highest to lowest, now with each city's own outskirts median and % diff alongside it.
 
 ## Slide 3 — Seattle is the only downtown that's genuinely denser than the outskirts
 

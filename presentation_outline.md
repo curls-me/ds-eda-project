@@ -19,7 +19,7 @@ Title, your name, "Finding Nicole's home: a data-driven shortlist."
 
 ## R — Resolution (5 slides)
 4. **Only 2 of 5 downtowns are actually pricier than the outskirts**
-   - Pooling all 5 downtowns together hid the effect (not significant, p=0.46). Tested individually: **Bellevue is 82.7% pricier** than outskirts (significant, clears the "50%+" hypothesis) and **Seattle is 23.9% pricier** (significant, but doesn't clear the 50% bar). Renton, Kent, and Federal Way are actually *cheaper* than outskirts and not statistically significant.
+   - Pooling all 5 downtowns together hid the effect (not significant, p=0.46). Tested individually, each city against its own local outskirts: **Bellevue is 31.9% pricier** than its own outskirts (significant, but doesn't clear the "50%+" hypothesis) and **Seattle is 29.1% pricier** (also significant, also under the 50% bar). Renton (-15.4%), Kent (-9.0%), and Federal Way (-12.7%) are actually *cheaper* than their own outskirts and not statistically significant.
 5. **Seattle is the only downtown that's genuinely denser than the outskirts**
    - Downtown overall is 7.7% denser than outskirts on `sqft_lot15` (significant). But by city: **Seattle's lots are 45.4% smaller** than outskirts (significant) — Kent, Renton, and Federal Way show no significant difference, and Bellevue's lots are actually *26% bigger* than outskirts, not smaller.
 6. **Density, not price, is what actually decides "lively" — and Seattle is the only downtown that qualifies**
