@@ -8,13 +8,13 @@ Client: Nicole Johnson (buyer) — lively, central neighborhood, middle price ra
 Title, your name, "Finding Nicole's home: a data-driven shortlist."
 
 ## S — Situation (2 slides)
-1. **Nicole wants a lively, central home she can afford within a year**
+1. **One year of sales, 70 zip codes — enough to compare neighbourhoods**
+   - 21,597 sales of 21,420 homes (May 2014–May 2015; 177 homes sold twice, kept as real re-sales), across 70 King County zip codes with 50–602 sales each. 21 columns: price/date, size, rooms, build quality, location, and the 15-nearest-neighbour columns. Prices $78K–$7.7M (median $450K), 370–13,540 sqft, built 1900–2015. Missing data is minor and imputed rather than dropped. Nothing in the data measures walkability, nightlife, or commute — which is what forces the proxy on the next slide.
+
+2. **Nicole wants a lively, central home she can afford within a year**
    - Her criteria: 1-2 bedrooms, 485-645 sqft, near a downtown, middle price range, move within 12 months.
    - Definition stated on the slide: **central** = within 5 miles of one of the 5 biggest cities; **lively** = dense, proxied by average lot size of the 15 nearest neighbours.
    - What we want to confirm or reject: (1) downtown sale prices 50%+ higher than the outskirts; (2) downtowns denser than the outskirts; (3) winter sale prices lower (up to 5%).
-
-2. **One year of sales, 70 zip codes — enough to compare neighbourhoods**
-   - 21,597 sales of 21,420 homes (May 2014–May 2015; 177 homes sold twice, kept as real re-sales), across 70 King County zip codes with 50–602 sales each. 21 columns: price/date, size, rooms, build quality, location, and the 15-nearest-neighbour columns. Prices $78K–$7.7M (median $450K), 370–13,540 sqft, built 1900–2015. Missing data is minor and imputed rather than dropped. Nothing in the data measures walkability, nightlife, or commute — which is what forces the proxy on the next slide.
 
 ## C — Complication (2 slides)
 3. **"Lively and central" isn't a column in the data — we had to define it**
