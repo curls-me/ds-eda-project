@@ -57,7 +57,7 @@ Marina · King County housing data, May 2014 – May 2015
 ## Slide 3 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
 **The assumption this rests on** (callout box, above the findings)
-> **Downtown = within 5 miles of a city centre.** We took the coordinates of the 5 biggest King County city centres and measured every home's straight-line (haversine) distance to the nearest one. Within 5 miles, the home is tagged with that city; further than 5 miles from all five, it counts as outskirts. Straight-line, not driving time — and the 5-mile radius is our choice, not something the data suggested, so a different radius would move borderline homes between the two groups.
+> **Downtown = within 5 miles of a city centre.** Straight-line (haversine) distance from each home to the nearest of the 5 city centres; beyond 5 miles from all of them, it's outskirts. Not drive time, and the 5-mile radius is our choice, not the data's.
 
 - Pooling all 5 downtowns hid the effect (not significant, p = 0.46)
 - Tested individually, each city vs. its own local outskirts:
@@ -80,7 +80,7 @@ Marina · King County housing data, May 2014 – May 2015
 ## Slide 4 — Seattle is the only downtown that's genuinely denser than the outskirts
 
 **The assumption this rests on** (callout box, above the findings)
-> **Smaller average lot size = denser = livelier.** We read `sqft_lot15` — the average lot size of a home's 15 nearest neighbours — as how tightly packed a neighbourhood is, and use that density as our stand-in for "lively." Nothing in the data measures walkability, nightlife or foot traffic, so this is a proxy, not a measurement.
+> **Smaller average lot size = denser = livelier.** `sqft_lot15`, the average lot size of a home's 15 nearest neighbours, stands in for density — and density stands in for "lively." Nothing in the data measures walkability or nightlife, so it's a proxy, not a measurement.
 
 - Downtown overall is 7.7% denser (significant)
 - By city:
@@ -135,11 +135,9 @@ Marina · King County housing data, May 2014 – May 2015
 3. **Buy in winter** — the ~5% discount holds even after controlling for house size, worth roughly **$7K–$16K** on the shortlisted homes
 
 **How "savings vs. summer" is worked out** (callout box under the bullets)
-1. Median **$/sqft per season** ÷ the all-year median gives each season an index: **Winter 0.959**, Spring 1.033, Summer 1.004, Fall 0.990
-2. Divide each home's actual price by the index of the season it *really* sold in — strips out its own season, leaving a season-neutral price
-3. Multiply back by any season's index to price the same home in that season. Winter vs. summer is a **4.4% gap** on every home
-
-Uses $/sqft, not raw price, so it isn't distorted by bigger houses happening to sell in a different season.
+1. Each season's median $/sqft ÷ the all-year median gives it an index: **Winter 0.959**, Spring 1.033, Summer 1.004, Fall 0.990
+2. Divide a home's price by its own sale season's index, multiply by the target season's
+3. Winter vs. summer: a **4.4% gap** on every home. Uses $/sqft, so house size doesn't skew it
 
 **[Table: final shortlist, priced for winter]**
 

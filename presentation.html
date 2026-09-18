@@ -282,7 +282,7 @@
     <h2>Only <span class="hl">2 of 5</span> downtowns are actually pricier than the outskirts</h2>
     <div class="method assumption">
       <span class="label">The assumption this rests on</span>
-      <strong>Downtown = within 5 miles of a city centre.</strong> We took the coordinates of the 5 biggest King County city centres and measured every home's straight-line (haversine) distance to the nearest one. Within 5 miles, the home is tagged with that city; further than 5 miles from all five, it counts as outskirts. Straight-line, not driving time &mdash; and the 5-mile radius is our choice, not something the data suggested, so a different radius would move borderline homes between the two groups.
+      <strong>Downtown = within 5 miles of a city centre.</strong> Straight-line (haversine) distance from each home to the nearest of the 5 city centres; beyond 5 miles from all of them, it's outskirts. Not drive time, and the 5-mile radius is our choice, not the data's.
     </div>
     <div class="split">
       <div class="text">
@@ -320,7 +320,7 @@
     <h2><span class="hl">Seattle</span> is the only downtown that's genuinely denser than the outskirts</h2>
     <div class="method assumption">
       <span class="label">The assumption this rests on</span>
-      <strong>Smaller average lot size = denser = livelier.</strong> We read <code>sqft_lot15</code> &mdash; the average lot size of a home's 15 nearest neighbours &mdash; as how tightly packed a neighbourhood is, and use that density as our stand-in for "lively." Nothing in the data measures walkability, nightlife or foot traffic, so this is a proxy, not a measurement.
+      <strong>Smaller average lot size = denser = livelier.</strong> <code>sqft_lot15</code>, the average lot size of a home's 15 nearest neighbours, stands in for density &mdash; and density stands in for "lively." Nothing in the data measures walkability or nightlife, so it's a proxy, not a measurement.
     </div>
     <ul>
       <li>Downtown overall is 7.7% denser (significant)</li>
@@ -400,11 +400,10 @@
         <div class="method">
           <span class="label">How "savings vs. summer" is worked out</span>
           <ol>
-            <li>Median <strong>$/sqft per season</strong> &divide; the all-year median gives each season an index: <strong>Winter 0.959</strong>, Spring 1.033, Summer 1.004, Fall 0.990.</li>
-            <li>Divide each home's actual price by the index of the season it <em>really</em> sold in &mdash; that strips out its own season and leaves a season-neutral price.</li>
-            <li>Multiply that back by any season's index to price the same home in that season. Winter vs. summer is a <strong>4.4% gap</strong> on every home.</li>
+            <li>Each season's median $/sqft &divide; the all-year median gives it an index: <strong>Winter 0.959</strong>, Spring 1.033, Summer 1.004, Fall 0.990.</li>
+            <li>Divide a home's price by its own sale season's index, multiply by the target season's.</li>
+            <li>Winter vs. summer: a <strong>4.4% gap</strong> on every home. Uses $/sqft, so house size doesn't skew it.</li>
           </ol>
-          Uses $/sqft, not raw price, so it isn't distorted by bigger houses happening to sell in a different season.
         </div>
       </div>
       <div class="visual">
