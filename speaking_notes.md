@@ -64,7 +64,12 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 ## Slide 7 — Three takeaways for Nicole
 
 - This builds directly on the Slide 5 shortlist (11 Seattle homes, sorted by grade/condition) — nothing new is being filtered here, we're just adding a price-by-season projection on top.
-- Each home's price is projected across all four seasons: we back out the effect of the season it actually sold in, then reapply each season's own effect, so we get an apples-to-apples "what would this same home cost in winter vs. spring vs. summer vs. fall" estimate.
+- Each home's price is projected across all four seasons. The slide now shows the mechanics, so walk it slowly:
+  1. Take the median price per square foot in each season and divide it by the all-year median $/sqft. That gives each season an index against an average year: Winter 0.959, Spring 1.033, Summer 1.004, Fall 0.990. Below 1 = cheaper than a typical month, above 1 = pricier.
+  2. Every home in the shortlist sold in some particular season, so its recorded price already carries that season's effect. Divide the price by the index of the season it actually sold in — that removes the effect and leaves a season-neutral price for that specific home.
+  3. Multiply the season-neutral price by whichever season's index you want, and you get what that same home would have cost in that season. Winter vs. summer works out to a 4.4% gap (0.959 vs. 1.004) on every home, which is why the savings column scales with the price of the home.
+- Why $/sqft rather than raw price: if bigger houses happen to sell in summer, a raw-price index would attribute their size to the season. Dividing by square footage first removes that.
+- Worth saying plainly if asked: this is a simple index adjustment, not a regression — one factor (season), applied uniformly, with no controls for anything else.
 - Every one of the 11 homes comes out cheapest in winter — the discount isn't cherry-picked, it holds across the whole shortlist. Savings vs. summer range roughly $7K–$16K depending on the home.
 - Bottom line to leave Nicole with: shop the Seattle shortlist, favor the higher-graded homes at the top of the list, and time the purchase for winter to capture the seasonal discount on top of everything else.
 

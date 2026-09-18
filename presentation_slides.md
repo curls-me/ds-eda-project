@@ -43,16 +43,14 @@ Marina · King County housing data, May 2014 – May 2015
 - Gaps are small and fillable — `yr_renovated` 17.8%, `waterfront` 11.1%, `sqft_basement` 2.1%, `view` 0.3%: filled in, no rows thrown away (one 33-bedroom typo removed)
 - **Not in the data: walkability, nightlife, commute time** — which is why "lively" needs a proxy
 
-**[Table: what's available, grouped]** — full height, right of text
+**What's available — 21 columns per sale** (two text columns across the slide, not a table)
 
-| Group | Columns |
-|---|---|
-| Price & date | price, date |
-| Size | sqft_living, sqft_lot, sqft_above, sqft_basement |
-| Rooms | bedrooms, bathrooms, floors |
-| Build quality | grade, condition, view, waterfront, yr_built, yr_renovated |
-| Location | zipcode, lat, long |
-| Neighbours (15 nearest) | sqft_living15, sqft_lot15 |
+- **Price & date** — price, date
+- **Size** — sqft_living, sqft_lot, sqft_above, sqft_basement
+- **Rooms** — bedrooms, bathrooms, floors
+- **Build quality** — grade, condition, view, waterfront, yr_built, yr_renovated
+- **Location** — zipcode, lat, long
+- **Neighbours (15 nearest)** — sqft_living15, sqft_lot15
 
 ---
 
@@ -129,6 +127,13 @@ Marina · King County housing data, May 2014 – May 2015
 1. Focus the search on **Seattle** — the only downtown that's genuinely lively (dense); budget roughly **$280K–$384K**
 2. Start with the **11 matching homes**, best-graded and best-condition first
 3. **Buy in winter** — the ~5% discount holds even after controlling for house size, worth roughly **$7K–$16K** on the shortlisted homes
+
+**How "savings vs. summer" is worked out** (callout box under the bullets)
+1. Median **$/sqft per season** ÷ the all-year median gives each season an index: **Winter 0.959**, Spring 1.033, Summer 1.004, Fall 0.990
+2. Divide each home's actual price by the index of the season it *really* sold in — strips out its own season, leaving a season-neutral price
+3. Multiply back by any season's index to price the same home in that season. Winter vs. summer is a **4.4% gap** on every home
+
+Uses $/sqft, not raw price, so it isn't distorted by bigger houses happening to sell in a different season.
 
 **[Table: final shortlist, priced for winter]**
 
