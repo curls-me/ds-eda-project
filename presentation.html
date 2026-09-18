@@ -133,6 +133,11 @@
     line-height: 1.5;
     color: var(--text);
   }
+  .method.assumption {
+    border-left-color: var(--accent-2);
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
   .method .label {
     display: block;
     font-weight: 600;
@@ -309,6 +314,10 @@
   <section class="slide">
     <div class="kicker"><span class="num">Slide 4</span> &middot; Resolution</div>
     <h2><span class="hl">Seattle</span> is the only downtown that's genuinely denser than the outskirts</h2>
+    <div class="method assumption">
+      <span class="label">The assumption this rests on</span>
+      <strong>Smaller average lot size = denser = livelier.</strong> We read <code>sqft_lot15</code> &mdash; the average lot size of a home's 15 nearest neighbours &mdash; as how tightly packed a neighbourhood is, and use that density as our stand-in for "lively." Nothing in the data measures walkability, nightlife or foot traffic, so this is a proxy, not a measurement.
+    </div>
     <ul>
       <li>Downtown overall is 7.7% denser (significant)</li>
       <li>By city:

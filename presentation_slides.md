@@ -76,6 +76,9 @@ Marina · King County housing data, May 2014 – May 2015
 
 ## Slide 4 — Seattle is the only downtown that's genuinely denser than the outskirts
 
+**The assumption this rests on** (callout box, above the findings)
+> **Smaller average lot size = denser = livelier.** We read `sqft_lot15` — the average lot size of a home's 15 nearest neighbours — as how tightly packed a neighbourhood is, and use that density as our stand-in for "lively." Nothing in the data measures walkability, nightlife or foot traffic, so this is a proxy, not a measurement.
+
 - Downtown overall is 7.7% denser (significant)
 - By city:
   - **Seattle's lots are 45.4% smaller** than outskirts (significant)

@@ -42,7 +42,10 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 
 ## Slide 4 — Seattle is the only downtown that's genuinely denser than the outskirts
 
-- This tests Hypothesis 2: `sqft_lot15` (average lot size of a house's 15 nearest neighbors) as a proxy for density/urbanicity — the dataset has no direct measure of walkability or foot traffic, so smaller neighboring lots is a reasonable stand-in, but it's a proxy, not a fact.
+- Start with the assumption box, out loud, before any result: we are assuming that smaller average lot size means higher density, and that higher density means "livelier." Say it as an assumption, not a finding — it's the load-bearing judgement call on this slide and the audience should get to disagree with it up front.
+- The mechanics: `sqft_lot15` is the average lot size of a house's 15 nearest neighbours. Small neighbouring lots means homes packed close together; large ones mean spread-out, suburban plots. That's the density read.
+- The second leap is density → lively. The dataset has no walkability score, no foot traffic, no nightlife or transit data, so there is nothing to measure "lively" with directly. Density is the closest available stand-in. Worth naming that this is two proxies stacked, and that a dense area could still be dull.
+- If challenged: the honest answer is that the alternative was to drop the "lively" criterion entirely, and a defensible proxy stated openly beats a silent one.
 - Downtown overall is significantly denser than outskirts (7.7%), but that pooled number hides a lot of variation by city, same pattern as the price test.
 - Seattle's lots are 45.4% smaller than outskirts and significant — a real density signal, not just closeness to a map point.
 - Bellevue is notable here: it passed the *price* test on the previous slide but its lots are actually 26% bigger than outskirts, not smaller — so despite being pricier, Bellevue is not denser/livelier by this measure.
