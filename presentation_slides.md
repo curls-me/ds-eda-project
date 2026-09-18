@@ -13,7 +13,27 @@ Marina · King County housing data, May 2014 – May 2015
 
 ---
 
-## Slide 1 — Situation, assumptions & hypotheses
+## Slide 1 — One year of sales, 70 zip codes — enough to compare neighbourhoods
+
+- **21,597 sales** of **21,420 homes**, May 2014 – May 2015 (177 homes sold twice — kept, they're real re-sales, not duplicates)
+- **70 zip codes** across King County, 50–602 sales each (median 283) — every area has enough sales to compare
+- **21 columns** per sale: price, size, rooms, build quality, location, plus the 15 nearest neighbours
+- The market it covers: **$78K–$7.7M** (median $450K), 370–13,540 sqft, built 1900–2015
+- Gaps are small and fillable — `yr_renovated` 17.8%, `waterfront` 11.1%, `sqft_basement` 2.1%, `view` 0.3%: filled in, no rows thrown away (one 33-bedroom typo removed)
+- **Not in the data: walkability, nightlife, commute time** — which is why "lively" needs a proxy
+
+**What's available — 21 columns per sale** (two text columns across the slide, not a table)
+
+- **Price & date** — price, date
+- **Size** — sqft_living, sqft_lot, sqft_above, sqft_basement
+- **Rooms** — bedrooms, bathrooms, floors
+- **Build quality** — grade, condition, view, waterfront, yr_built, yr_renovated
+- **Location** — zipcode, lat, long
+- **Neighbours (15 nearest)** — sqft_living15, sqft_lot15
+
+---
+
+## Slide 2 — Situation, assumptions & hypotheses
 
 **Meet Nicole — a single first-time buyer, no kids**
 
@@ -31,26 +51,6 @@ Marina · King County housing data, May 2014 – May 2015
 - **Winter** sale prices are lower (up to 5%)
 
 **[Chart: map_downtowns.png — houses colored by closest downtown]** — full height, right of text
-
----
-
-## Slide 2 — One year of sales, 70 zip codes — enough to compare neighbourhoods
-
-- **21,597 sales** of **21,420 homes**, May 2014 – May 2015 (177 homes sold twice — kept, they're real re-sales, not duplicates)
-- **70 zip codes** across King County, 50–602 sales each (median 283) — every area has enough sales to compare
-- **21 columns** per sale: price, size, rooms, build quality, location, plus the 15 nearest neighbours
-- The market it covers: **$78K–$7.7M** (median $450K), 370–13,540 sqft, built 1900–2015
-- Gaps are small and fillable — `yr_renovated` 17.8%, `waterfront` 11.1%, `sqft_basement` 2.1%, `view` 0.3%: filled in, no rows thrown away (one 33-bedroom typo removed)
-- **Not in the data: walkability, nightlife, commute time** — which is why "lively" needs a proxy
-
-**What's available — 21 columns per sale** (two text columns across the slide, not a table)
-
-- **Price & date** — price, date
-- **Size** — sqft_living, sqft_lot, sqft_above, sqft_basement
-- **Rooms** — bedrooms, bathrooms, floors
-- **Build quality** — grade, condition, view, waterfront, yr_built, yr_renovated
-- **Location** — zipcode, lat, long
-- **Neighbours (15 nearest)** — sqft_living15, sqft_lot15
 
 ---
 

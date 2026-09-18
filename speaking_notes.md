@@ -9,7 +9,17 @@ Slides stay bullet-only; say the rest out loud.
 
 Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortlist homes for using King County housing sale data (May 2014 – May 2015).
 
-## Slide 1 — Situation, assumptions & hypotheses
+## Slide 1 — One year of sales, 70 zip codes
+
+- Open here, before meeting Nicole: establish what the dataset actually is, so every number later in the talk has a known base.
+- 21,597 recorded sales covering 21,420 distinct homes over roughly one year (May 2014 – May 2015). The 177 extra rows are homes that sold twice inside the window — we kept them deliberately: they're genuine re-sales at different prices, not duplicate records.
+- 70 zip codes, with 50 to 602 sales each (median 283). Worth saying out loud: even the thinnest zip code has ~50 sales, so the neighbourhood-level comparisons later aren't built on a handful of rows.
+- 21 columns per sale, grouped on the slide rather than listed one by one — price and date, size, room counts, build quality, location, and the `*15` columns that describe a home's 15 nearest neighbours (which is what the density test on slide 4 leans on).
+- Range check: prices span $78K to $7.7M with a median of $450K, homes run 370 to 13,540 sqft, build years 1900 to 2015. Nicole's 485–645 sqft target sits at the very bottom of that size range — flag that early, it explains why the shortlist is small.
+- Missing data is minor and each gap had a defensible fill (basement derived from living minus above-ground, view/waterfront default to 0, renovation year to 0 with a `was_renovated` flag kept). We imputed rather than dropped rows, so we didn't throw away good data in 20 other columns. The only row actually removed was a 33-bedroom / 1,620 sqft entry — a data-entry error, not a house.
+- Close on the limitation, because it hands over to the next slide, where we define Nicole's criteria: there is no walkability, nightlife, or commute column anywhere in this data. "Lively" is not measurable directly here, so it has to be proxied — that's the whole reason for the density test that follows.
+
+## Slide 2 — Situation, assumptions & hypotheses
 
 - Nicole is a single, first-time buyer with no children, looking for a 1–2 bedroom home in the 485–645 sqft range (45–60 sqm).
 - "Lively and central" isn't a column in the dataset — we had to define it ourselves, and we're stating both halves of the definition up front rather than assuming them:
@@ -23,21 +33,11 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 - Say plainly that these are stated before the results, and that two of the three come back partly or wholly rejected — that's the point of writing them down first.
 - Show the map here to sanity-check the downtown tagging itself before trusting any test built on it — the 5-mile radius should visibly cluster around each city center, surrounded by "Other."
 
-## Slide 2 — One year of sales, 70 zip codes
-
-- Orient the audience before any findings: what the dataset actually is, so every later number has a known base.
-- 21,597 recorded sales covering 21,420 distinct homes over roughly one year (May 2014 – May 2015). The 177 extra rows are homes that sold twice inside the window — we kept them deliberately: they're genuine re-sales at different prices, not duplicate records.
-- 70 zip codes, with 50 to 602 sales each (median 283). Worth saying out loud: even the thinnest zip code has ~50 sales, so the neighbourhood-level comparisons later aren't built on a handful of rows.
-- 21 columns per sale, grouped on the slide rather than listed one by one — price and date, size, room counts, build quality, location, and the `*15` columns that describe a home's 15 nearest neighbours (which is what the density test on slide 4 leans on).
-- Range check: prices span $78K to $7.7M with a median of $450K, homes run 370 to 13,540 sqft, build years 1900 to 2015. Nicole's 485–645 sqft target sits at the very bottom of that size range — flag that early, it explains why the shortlist is small.
-- Missing data is minor and each gap had a defensible fill (basement derived from living minus above-ground, view/waterfront default to 0, renovation year to 0 with a `was_renovated` flag kept). We imputed rather than dropped rows, so we didn't throw away good data in 20 other columns. The only row actually removed was a 33-bedroom / 1,620 sqft entry — a data-entry error, not a house.
-- Close on the limitation, because it sets up the next slide: there is no walkability, nightlife, or commute column anywhere in this data. "Lively" is not measurable directly here, so it has to be proxied — that's the whole reason for the density test that follows.
-
 ## Slide 3 — Only 2 of 5 downtowns are actually pricier than the outskirts
 
 - Take the assumption box first, before any result. Every home has a lat/long, so we hard-coded the coordinates of the 5 city centres and computed the haversine (great-circle) distance from each home to each centre. The nearest of those five decides which city a home belongs to; if even the nearest is more than 5 miles away, the home is outskirts. Same calculation runs over the whole cleaned dataset, so the tagging is reusable for later slices.
 - Two caveats to say out loud: it's straight-line distance, not drive time, so a home 4 miles away across water is treated as closer than one 6 miles away down a straight road. And the 5-mile radius is our own pick — nothing in the data suggests it. Homes near the boundary would flip groups under a different radius.
-- The map on slide 1 is the sanity check for exactly this: the tagging should show up as visible clusters around each city centre, surrounded by "Other". If someone doubts the definition, point back at that map.
+- The map on slide 2 is the sanity check for exactly this: the tagging should show up as visible clusters around each city centre, surrounded by "Other". If someone doubts the definition, point back at that map.
 - Pooling all 5 downtowns together hid the effect entirely (not significant, p = 0.46) — this is the reason we broke it out by city instead of testing "downtown" as one blob.
 - Tested each city against its own local outskirts (not one shared outskirts number) — the area just outside Bellevue isn't priced like the area just outside Federal Way, so pooling them would have been misleading.
 - Bellevue is 31.9% pricier than its own outskirts and significant, but falls short of the 50%+ hypothesis. Seattle is pricier too (29.1%) and significant, also under the 50% bar.

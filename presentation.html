@@ -228,7 +228,29 @@
   </section>
 
   <section class="slide">
-    <div class="kicker"><span class="num">Slide 1</span> &middot; Situation, assumptions &amp; hypotheses</div>
+    <div class="kicker"><span class="num">Slide 1</span> &middot; Situation &mdash; the data</div>
+    <h2>One year of sales, <span class="hl">70 zip codes</span> &mdash; enough to compare neighbourhoods</h2>
+    <ul>
+      <li><strong>21,597 sales</strong> of <strong>21,420 homes</strong>, May 2014 &ndash; May 2015 &mdash; 177 homes sold twice (real re-sales, kept)</li>
+      <li><strong>70 zip codes</strong> across King County, 50&ndash;602 sales each (median 283)</li>
+      <li><strong>21 columns</strong> per sale &mdash; price, size, rooms, build quality, location, plus the 15 nearest neighbours</li>
+      <li>The market it covers: <strong>$78K&ndash;$7.7M</strong> (median $450K), 370&ndash;13,540 sqft, built 1900&ndash;2015</li>
+      <li>Gaps are small and fillable &mdash; <code>yr_renovated</code> 17.8%, <code>waterfront</code> 11.1%, <code>sqft_basement</code> 2.1%, <code>view</code> 0.3%: filled in, no rows thrown away</li>
+      <li><strong>Not in the data: walkability, nightlife, commute time</strong> &mdash; so "lively" needs a proxy</li>
+    </ul>
+    <h3 class="group">What's available &mdash; 21 columns per sale</h3>
+    <div class="cols2">
+      <div class="item"><span class="label">Price &amp; date</span><span class="cols">price, date</span></div>
+      <div class="item"><span class="label">Size</span><span class="cols">sqft_living, sqft_lot, sqft_above, sqft_basement</span></div>
+      <div class="item"><span class="label">Rooms</span><span class="cols">bedrooms, bathrooms, floors</span></div>
+      <div class="item"><span class="label">Build quality</span><span class="cols">grade, condition, view, waterfront, yr_built, yr_renovated</span></div>
+      <div class="item"><span class="label">Location</span><span class="cols">zipcode, lat, long</span></div>
+      <div class="item"><span class="label">Neighbours (15 nearest)</span><span class="cols">sqft_living15, sqft_lot15</span></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker"><span class="num">Slide 2</span> &middot; Situation, assumptions &amp; hypotheses</div>
     <div class="split">
       <div class="text">
         <h2>Meet Nicole &mdash; a single first-time buyer, no kids</h2>
@@ -252,28 +274,6 @@
       <div class="visual">
         <img src="slide_assets/map_downtowns.png" alt="Map of houses colored by closest downtown">
       </div>
-    </div>
-  </section>
-
-  <section class="slide">
-    <div class="kicker"><span class="num">Slide 2</span> &middot; Situation &mdash; the data</div>
-    <h2>One year of sales, <span class="hl">70 zip codes</span> &mdash; enough to compare neighbourhoods</h2>
-    <ul>
-      <li><strong>21,597 sales</strong> of <strong>21,420 homes</strong>, May 2014 &ndash; May 2015 &mdash; 177 homes sold twice (real re-sales, kept)</li>
-      <li><strong>70 zip codes</strong> across King County, 50&ndash;602 sales each (median 283)</li>
-      <li><strong>21 columns</strong> per sale &mdash; price, size, rooms, build quality, location, plus the 15 nearest neighbours</li>
-      <li>The market it covers: <strong>$78K&ndash;$7.7M</strong> (median $450K), 370&ndash;13,540 sqft, built 1900&ndash;2015</li>
-      <li>Gaps are small and fillable &mdash; <code>yr_renovated</code> 17.8%, <code>waterfront</code> 11.1%, <code>sqft_basement</code> 2.1%, <code>view</code> 0.3%: filled in, no rows thrown away</li>
-      <li><strong>Not in the data: walkability, nightlife, commute time</strong> &mdash; so "lively" needs a proxy</li>
-    </ul>
-    <h3 class="group">What's available &mdash; 21 columns per sale</h3>
-    <div class="cols2">
-      <div class="item"><span class="label">Price &amp; date</span><span class="cols">price, date</span></div>
-      <div class="item"><span class="label">Size</span><span class="cols">sqft_living, sqft_lot, sqft_above, sqft_basement</span></div>
-      <div class="item"><span class="label">Rooms</span><span class="cols">bedrooms, bathrooms, floors</span></div>
-      <div class="item"><span class="label">Build quality</span><span class="cols">grade, condition, view, waterfront, yr_built, yr_renovated</span></div>
-      <div class="item"><span class="label">Location</span><span class="cols">zipcode, lat, long</span></div>
-      <div class="item"><span class="label">Neighbours (15 nearest)</span><span class="cols">sqft_living15, sqft_lot15</span></div>
     </div>
   </section>
 
@@ -429,16 +429,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="slide closing">
-    <div class="kicker">Caveats &mdash; mention out loud, not a slide</div>
-    <h2>What this data can't tell us</h2>
-    <ul>
-      <li>Sold-home data from May 2014&ndash;May 2015, not live listings &mdash; use these zip codes and price bands as a filter on today's market</li>
-      <li><code>sqft_lot15</code> is a density proxy, not a direct measure of "lively"</li>
-      <li>Seasonality reflects one observed year, not a confirmed recurring pattern</li>
-    </ul>
   </section>
 
 </div>
