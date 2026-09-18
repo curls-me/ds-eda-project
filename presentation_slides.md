@@ -22,13 +22,13 @@ Marina · King County housing data, May 2014 – May 2015
 - Buying within the next 12 months
 
 **How we defined "lively and central"**
-- Downtown = within 5 miles of Seattle, Bellevue, Kent, Renton, or Federal Way
-- Timing and price both matter — factor in seasonality
+- **Central** = within 5 miles of one of the 5 biggest cities — Seattle, Bellevue, Kent, Renton, Federal Way
+- **Lively** = dense, using average lot size of the 15 nearest neighbours as the proxy
 
-**What we're testing**
-- Downtown homes cost 50%+ more than the outskirts
-- Smaller neighboring lots = denser = more "lively"
-- Winter sales run up to 5% cheaper
+**What we want to confirm or reject**
+- Downtown sale prices are **50%+ higher** than the outskirts
+- Downtowns are **denser** than the outskirts
+- **Winter** sale prices are lower (up to 5%)
 
 **[Chart: map_downtowns.png — houses colored by closest downtown]** — full height, right of text
 

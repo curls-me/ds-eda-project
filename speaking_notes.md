@@ -12,14 +12,15 @@ Introduce yourself and the client: Nicole Johnson, a buyer we're helping shortli
 ## Slide 1 — Situation, assumptions & hypotheses
 
 - Nicole is a single, first-time buyer with no children, looking for a 1–2 bedroom home in the 485–645 sqft range (45–60 sqm).
-- "Lively and central" isn't a column in the dataset — we had to define it ourselves, and we're stating the definition up front rather than assuming it:
-  - **Downtown** = within 5 miles straight-line distance of one of the 5 biggest King County cities (Seattle, Bellevue, Kent, Renton, Federal Way). Straight-line, not driving distance — a simplification, not actual commute time. The 5-mile radius is our own assumption, not derived from the data.
-  - Timing and price matter to her, but she should let seasonality factor into when she buys.
-  - We're assuming the seasonal pattern found in this 2014–2015 dataset still holds today, and that the shortlisted homes stand in for current listings — their recorded price reflects roughly what a comparable home would cost now, adjusted for whichever season she buys in.
-- Three hypotheses we're about to test, stated as a "rule of three" so it's clear we're not cherry-picking after the fact:
-  1. Downtown homes have a median price at least 50% higher than homes outside that radius.
-  2. Neighborhoods where nearby homes sit on smaller lots (lower `sqft_lot15`) are denser and more likely to be the lively, urban areas Nicole wants.
-  3. Summer sales volume peaks, and winter homes sell for up to 5% less.
+- "Lively and central" isn't a column in the dataset — we had to define it ourselves, and we're stating both halves of the definition up front rather than assuming them:
+  - **Central** = within 5 miles straight-line distance of one of the 5 biggest King County cities (Seattle, Bellevue, Kent, Renton, Federal Way). Straight-line, not driving distance — a simplification, not actual commute time. The 5-mile radius is our own assumption, not derived from the data.
+  - **Lively** = dense, measured by `sqft_lot15`, the average lot size of a home's 15 nearest neighbours. Smaller neighbouring lots means homes packed closer together. Flag it as a proxy here and expand on it when it does the real work on slide 4.
+- Two assumptions to say out loud here rather than put on the slide: timing and price both matter to Nicole, so seasonality should shape *when* she buys; and we're assuming the seasonal pattern in this 2014–2015 data still holds today, with the shortlisted homes standing in for comparable current listings.
+- Three things we want to confirm or reject, stated as a "rule of three" so it's clear we're not cherry-picking after the fact:
+  1. Downtown sale prices are at least 50% higher than homes outside that radius.
+  2. Downtowns are denser than their outskirts — smaller `sqft_lot15`, the urban areas Nicole wants.
+  3. Winter sale prices are lower, by up to 5%.
+- Say plainly that these are stated before the results, and that two of the three come back partly or wholly rejected — that's the point of writing them down first.
 - Show the map here to sanity-check the downtown tagging itself before trusting any test built on it — the 5-mile radius should visibly cluster around each city center, surrounded by "Other."
 
 ## Slide 2 — One year of sales, 70 zip codes
