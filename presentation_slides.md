@@ -1,8 +1,7 @@
 # Finding Nicole's Home: A Data-Driven Shortlist
 
 King County Housing EDA — presentation copy
-(Edit this file directly; it's the source text for `presentation.html`.
-Full talking points live in `speaking_notes.md`, kept separate so this stays just slide bullets.)
+(Edit this file directly; it's the source text for `presentation.html`.)
 
 ---
 
